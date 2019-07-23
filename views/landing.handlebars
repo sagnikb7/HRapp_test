@@ -1,0 +1,24 @@
+<div class="row justify-content-center">
+    <div class="col-4">
+        <form class="mt-5">
+            <h3>Login/Register</h3>
+            <div class="form-group">
+                <label for="id">Employee ID</label>
+                <input type="number" class="form-control" id="empid" aria-describedby="empid" placeholder="Enter Employee ID">
+            </div>
+
+        </form>
+        <button onclick="redirect();" class="btn btn-primary">Log In</button>
+        <a href="/employee/register" class="btn btn-info">New Employee</a>
+
+    </div>
+
+</div>
+
+<script>
+    function redirect() {
+
+        let empID = document.getElementById('empid').value;
+        window.location.href = "/employee/profile/" + empID;
+    }
+</script>

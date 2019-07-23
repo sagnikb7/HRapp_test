@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col mt-4">
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Employee Profile</h5>
+                <h3>Name: {{data.main.name}}</h3>
+                <p>Designation: {{data.main.designation}} </p>
+                <p>Emp ID: {{data.main.employeeID}}</p>
+
+
+                <hr>
+                <a href="{{data.main.socialLinks.facebook}}">Facebook</a>
+                <a href="{{data.main.socialLinks.linkedin}}">LinkedIn</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="col mt-4">
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Emergency Details</h5>
+
+                <p>Contact 1: {{data.main.emergencyContacts.contact1}} </p>
+                <p>Contact 2: {{data.main.emergencyContacts.contact2}}</p>
+
+
+                <hr>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Edit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Upload Section</h5>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col">
+
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Document Status</h5>
+                <p>Resume : Uploaded</p>
+                <p>Last Company Payslip: Uploaded</p>
+                <p>Sign Off Letter: n/a</p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Emergency Contacts</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/employee/update/emergencyContacts">
+                    <input type="hidden" name="employeeID" value="{{data.main.employeeID}}">
+                    <div class="form-group">
+                        <label>Contact 1</label>
+                        <input type="number" class="form-control" id="contact1" name="contact1" placeholder="{{data.main.emergencyContacts.contact1}}"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact 2</label>
+                        <input type="number" class="form-control" id="contact2" name="contact2" placeholder="{{data.main.emergencyContacts.contact2}}"
+                            required>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>

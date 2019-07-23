@@ -1,0 +1,3 @@
+navigate to current directory 
+
+ mongod --dbpath ./data

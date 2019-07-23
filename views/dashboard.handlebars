@@ -1,0 +1,45 @@
+<h2>Dashboard</h2>
+<div class="row mt-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                Upcoming BirthDays
+            </div>
+            <div class="card-body">
+                <p class="card-text">Emp 1 </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="col">
+
+        <div class="card">
+            <div class="card-header">
+                Holidays
+            </div>
+            <div class="card-body">
+                <p class="card-text">Holiday 1</p>
+                <p class="card-text">Holiday 2</p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<hr>
+{{#each data.main}}
+<div class="row mb-2">
+    <div class="card">
+        <div class="card-header">
+            {{name}}
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{employeeID}} {{designation}} </p>
+
+        </div>
+        <button type="button" class="btn btn-primary">
+            Days <span class="badge badge-light">12</span>
+        </button>
+    </div>
+</div>
+{{/each}}
